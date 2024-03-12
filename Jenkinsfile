@@ -1,25 +1,33 @@
 pipeline {
     agent any
-
+    
     stages {
-        stage('Cloning repository') {
+        stage('Clone repository') {
             steps {
                 git 'https://github.com/musawir696/mlops_cs.git'
             }
         }
-
-        stage('Installation of dependencies') {
+        
+        stage('Install dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                script {
+                    sh 'pip install -r requirements.txt'
+                }
             }
         }
-
-        stage('Execution of test.py') {
+        
+        stage('Run tests') {
             steps {
-                sh 'python test.py'
+                script {
+                    sh 'pytest test.py'
+                }
             }
         }
-
-       
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
     }
 }

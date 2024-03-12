@@ -12,7 +12,7 @@ pipeline {
     steps {
         script {
            
-            sh 'pip3 install -r requirements.txt'
+            bat 'pip install -r requirements.txt'
         }
     }
 }
@@ -21,7 +21,7 @@ pipeline {
         stage('Run tests') {
             steps {
                 script {
-                    sh 'pytest test.py'
+                    bat 'pytest test.py'
                 }
             }
         }

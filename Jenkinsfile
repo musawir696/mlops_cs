@@ -9,12 +9,14 @@ pipeline {
         }
         
         stage('Install dependencies') {
-            steps {
-                script {
-                    sh 'pip install -r requirements.txt'
-                }
-            }
+    steps {
+        script {
+           
+            sh 'C:\\Users\\Abdul Musawir\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip install -r requirements.txt'
         }
+    }
+}
+
         
         stage('Run tests') {
             steps {

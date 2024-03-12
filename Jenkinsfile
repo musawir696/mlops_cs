@@ -12,7 +12,7 @@ pipeline {
     steps {
         script {
            
-            sh 'C:\\Users\\Abdul Musawir\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip install -r requirements.txt'
+            sh 'C:\\Users\\Abdul Musawir\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip3 install -r requirements.txt'
         }
     }
 }

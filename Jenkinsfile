@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Cloning repository') {
             steps {
-                git 'https://github.com/your/repository.git'
+                git 'https://github.com/musawir696/mlops_cs.git'
             }
         }
 
         stage('Installation of dependencies') {
             steps {
-                sh 'your_dependency_installation_command_here'
+                sh 'pip install -r requirements.txt'
             }
         }
 
@@ -20,19 +20,6 @@ pipeline {
             }
         }
 
-        stage('Deploying step') {
-            steps {
-                script {
-                    def branchName = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
-                    if (branchName == 'main') {
-                        echo 'Deploying to production'
-                        // Add deployment to production steps here
-                    } else {
-                        echo 'Deploying to UAT'
-                        // Add deployment to UAT steps here
-                    }
-                }
-            }
-        }
+       
     }
 }
